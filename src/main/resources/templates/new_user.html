@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>New User</title>
+<style>
+h1{text-align: center;}
+h2{text-align: center;}</style>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+crossorigin="anonymous">
+</head>
+<body>
+	<div align="center" class="container">
+		<font color ="blue"><h1>ADD USER</h1></font>
+		<hr>
+		
+		<form action="#" th:action="@{/saveUser}" th:object="${user}" method="post">
+		
+		<a th:if="${#fields.hasErrors('username')}" th:errors="*{username}" >Error</a>
+		<input type="text" th:field="*{username}" placeholder=" Enter Username" class="form-control mb-4 col-4">		
+		
+	
+			<a th:if="${#fields.hasErrors('password')}" th:errors="*{password}" >Error</a>
+			<input type="text" th:field="*{password}" placeholder=" Enter Password" class="form-control mb-4 col-4">		
+		
+		<a th:if="${#fields.hasErrors('contact')}" th:errors="*{contact}" >Error</a>
+		<input type="text" th:field="*{contact}" placeholder=" Enter Contact" class="form-control mb-4 col-4">		
+		
+		<a th:if="${#fields.hasErrors('email')}" th:errors="*{email}" >Error</a>
+		<input type="email" th:field="*{email}" placeholder=" Enter Email" class="form-control mb-4 col-4">		
+		
+		
+		<a th:if="${#fields.hasErrors('address')}" th:errors="*{address}" >Error</a>
+		<input type="text" th:field="*{address}" placeholder=" Enter Address" class="form-control mb-4 col-4">		
+		
+		<button type="submit" class="btn btn-info col-2"> Save User</button>
+
+
+
+
+
+
+
+
+
+
+	</div>
+</body>
+</html>
